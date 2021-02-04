@@ -17,23 +17,24 @@ namespace ref_out
 
             Console.WriteLine("----------------------------------------------");
 
-            int numero= 1;
+            int numero = 1;
+            int numer2 = 2;
             Console.WriteLine("TIPO Valor");
             Console.WriteLine("antes del cambio: ");
             Console.WriteLine(numero);
             Console.WriteLine("despues del cambio: ");
-            EditarNumero(ref numero, 100);
+            EditarNumero(ref numer2, out numero);
             Console.WriteLine(numero);
 
             Console.Read();
 
         }
         //los tipos valor nesecitan la clausula REF o OUT
-        //REF no nesecita un valor asignado en el metodo
-        //OUT nesecita que le asignen un valor en el metodo
-        private static void EditarNumero(ref int numero, int v)
+        //REF no nesecita un valor asignado antes de enviarle al metodo
+        //OUT nesecita que le asignen un valor antes de enviarlo al metodo
+        private static void EditarNumero(ref int numero,out int v)
         {
-            numero = v;
+            v = numero;
         }
         //las clases se pasan por referencia
         private static void EditarCerveza(Cerveza cerveza, string nombre)
